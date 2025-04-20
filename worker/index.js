@@ -1,5 +1,5 @@
 const IMG_NUMBER = 115;
-const PAGE_DOMAIN = "static-taffy.page.dev";
+const PAGE_DOMAIN = "static-taffy.pages.dev";
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
@@ -8,7 +8,7 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   // 随机选一张图片
   const randomImageNumber = Math.floor(Math.random() * IMG_NUMBER) + 1;
-  const imageUrl = `${PAGE_DOMAIN}/${randomImageNumber}.png`;
+  const imageUrl = `https://${PAGE_DOMAIN}/${randomImageNumber}.png`;
 
   try {
     // 获取图片
